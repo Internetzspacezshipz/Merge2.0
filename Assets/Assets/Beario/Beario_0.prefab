@@ -42,12 +42,12 @@ GameObject:
   - component: {fileID: 50841906666076226}
   - component: {fileID: 70800032626902992}
   - component: {fileID: 95256158627992526}
-  - component: {fileID: 114678998738395472}
+  - component: {fileID: 114830240394240708}
   - component: {fileID: 61783362084614772}
   - component: {fileID: 82649125394566924}
   m_Layer: 0
   m_Name: Beario_0
-  m_TagString: Player
+  m_TagString: TriggerTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387381132183294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.75, y: 3.13, z: 4.5}
+  m_LocalPosition: {x: -35.1, y: 51, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4315555893333126}
@@ -124,7 +124,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 50
   field of view: 44
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1.2729503
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -180,8 +180,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.05}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.85, y: 1.68}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.85, y: 1.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -401,7 +401,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114678998738395472
+--- !u!114 &114830240394240708
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -416,10 +416,9 @@ MonoBehaviour:
   raycastOffset: 0.4
   raycastDistance: 0.1
   killHeight: -50
-  jumpSpeed: 5
-  sprintBonus: 1
-  coinSound: {fileID: 0}
-  deathSound: {fileID: 0}
+  jumpSpeed: 12
+  coinSound: {fileID: 8300000, guid: 69f4c0a01d2171a4db689767def9440e, type: 3}
+  deathSound: {fileID: 8300000, guid: 0ef6f4f981d02504ab079a52f18df661, type: 3}
 --- !u!124 &124858038298555436
 Behaviour:
   m_ObjectHideFlags: 1
@@ -459,7 +458,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 7bf7b3efaedbb2a419a81e7d50eb4bb2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9f496b1f3855ff459301a71b110ec0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
