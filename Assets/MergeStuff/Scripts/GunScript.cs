@@ -9,6 +9,8 @@ public class GunScript : MonoBehaviour
     GameObject Bullet;
     [SerializeField]
     bool gunOn = true;
+    [SerializeField]
+    float fireRate = 0.5f;
 
     #endregion
 
@@ -21,7 +23,7 @@ public class GunScript : MonoBehaviour
     {
         while (gunOn == true)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(fireRate);
             Instantiate(Bullet, transform.position, transform.rotation);
         }
     }

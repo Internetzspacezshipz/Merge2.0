@@ -7,8 +7,10 @@ public class BoxTrigger : MonoBehaviour
     #region Variables
     [SerializeField]
     TriggerableBoxDropScript ActivateTarget;
-
+    [SerializeField]
+    protected int numberOfHitsRequired = 1;
     protected bool Activated = false;
+    private int numberOfHits = 0;
 
     #endregion
 
@@ -16,7 +18,11 @@ public class BoxTrigger : MonoBehaviour
     {
         if (other.tag == "TriggerTag")
         {
-            ActivateTarget.Movement();
+            ++numberOfHits;
+            if (numberOfHits >= numberOfHitsRequired)
+            {
+                ActivateTarget.Movement();
+            }
         }
     }
 
