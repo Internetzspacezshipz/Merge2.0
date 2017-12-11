@@ -91,19 +91,8 @@ public class Movement : BaseUnit
             Destroy(other.gameObject);
             _ASource.PlayOneShot(coinSound);
         }
-        else if (other.CompareTag("EnemyTag"))
-        {
-            KillEnemy(other.gameObject);
-        }
-        
-
     }
 
-    private void KillEnemy(GameObject enemy)
-    {
-        _RB.velocity = new Vector2(_RB.velocity.x, jumpSpeed/2);
-        Destroy(enemy);
-    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
