@@ -62,6 +62,14 @@ public class PlayerControl : Character
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Ground")
+        {
+            canJump = true;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         canJump = false;
