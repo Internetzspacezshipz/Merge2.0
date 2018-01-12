@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     }
 
     //add velocity
-    protected void Move(float moveSpeed, int moveDirection)
+    internal void Move(float moveSpeed, int moveDirection)
     {
         _RB.velocity = new Vector2(moveSpeed*moveDirection,_RB.velocity.y);
     }
