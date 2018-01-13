@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     private float bulletTime = 1.0f;
     private Rigidbody2D _RB;
     public Vector2 direction;
+    public bool destroyOnBox = true;
+    public bool destroyBox;
 
     private void Awake()
     {
@@ -27,13 +29,24 @@ public class Bullet : MonoBehaviour
     //Restarts the game if the character enters the trigger area.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             GameManager.instance.RestartGame();
         }
-        else if (collision.transform.tag == "Ground")
+        if (collision.CompareTag("Ground"))
         {
-            DestroyObject(gameObject);
+            DestroyObject(gameObject); 
+        }
+        if (collision.CompareTag("Box"))
+        {
+            if (destroyOnBox == true)
+            {
+                DestroyObject(gameObject);
+            }
+            else if (destroyBox == true)
+            {
+                DestroyObject(collision.gameObject);
+            }
         }
     }
 }

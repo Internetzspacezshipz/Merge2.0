@@ -1,0 +1,1 @@
+Simply restarts the game if the characters touch this
