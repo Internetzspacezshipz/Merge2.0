@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 70491425598375866}
   - component: {fileID: 61449993756297994}
   m_Layer: 0
-  m_Name: Body
+  m_Name: Soul
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 70515938783591016}
   - component: {fileID: 61104617496243748}
   m_Layer: 0
-  m_Name: Soul
+  m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773525877669426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.902687, y: -2.3032362, z: 0.022253972}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4738708054330944}

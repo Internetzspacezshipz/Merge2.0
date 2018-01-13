@@ -11,7 +11,7 @@ public class PlayerControl : Character
     private float jumpHeight = 1;
 
 
-    private bool canJump = true;
+    private bool canJump = false;
 
 
     internal float windEffect = 0f;
