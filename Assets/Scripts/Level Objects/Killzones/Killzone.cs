@@ -5,9 +5,9 @@ using UnityEngine;
 public class Killzone : MonoBehaviour
 {
     //Restarts the game if the character enters the trigger area.
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.transform.tag == "Player")
+        if (other.transform.CompareTag("Player"))
         {
             GameManager.instance.RestartGame();
         }

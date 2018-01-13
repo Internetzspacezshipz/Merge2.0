@@ -14,8 +14,6 @@ public class MySwitch : MonoBehaviour
     private UnityEvent TriggerEnter;
     [SerializeField]
     private UnityEvent TriggerExit;
-    //[SerializeField]
-    //private UnityEvent TriggerStay;
     private bool triggered = false;
 
     #endregion
@@ -59,16 +57,4 @@ public class MySwitch : MonoBehaviour
 
         }
     }
-
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-    //    if (other.transform.CompareTag("Player"))
-    //    {
-    //        TriggerStay.Invoke();
-    //    }
-    //    if (other.transform.CompareTag("Box") && triggersOnBoxes == true)
-    //    {
-    //        TriggerEnter.Invoke();
-    //    }
-    //}
 }

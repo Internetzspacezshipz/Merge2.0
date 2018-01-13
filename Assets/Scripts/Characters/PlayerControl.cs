@@ -51,24 +51,33 @@ public class PlayerControl : Character
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.transform.tag == "Ground")
+        if (other.transform.CompareTag("Ground"))
         {
             canJump = true;
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.transform.tag == "Ground")
+        if (other.transform.CompareTag("Platform"))
         {
-            canJump = true;
+            gameObject.transform.parent = other.transform;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Ground"))
+        {
+            canJump = true;
+        }
+        if (other.transform.CompareTag("Platform"))
+        {
+            gameObject.transform.parent = other.transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
     {
         canJump = false;
+        gameObject.transform.parent = null;
     }
 }
