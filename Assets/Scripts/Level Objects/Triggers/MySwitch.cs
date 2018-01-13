@@ -4,6 +4,10 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class MySwitch : MonoBehaviour
 {
+
+    [SerializeField]
+    private bool triggersOnBoxes = true;
+
     [SerializeField]
     private UnityEvent TriggerEnter;
     [SerializeField]
@@ -18,7 +22,7 @@ public class MySwitch : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.transform.CompareTag("Player") || other.transform.CompareTag("Box"))
         {
             TriggerEnter.Invoke();
         }
@@ -26,7 +30,7 @@ public class MySwitch : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.transform.CompareTag("Player") || other.transform.CompareTag("Box"))
         {
             TriggerExit.Invoke();
         }
@@ -34,7 +38,7 @@ public class MySwitch : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.transform.CompareTag("Player") || other.transform.CompareTag("Box"))
         {
             TriggerStay.Invoke();
         }
