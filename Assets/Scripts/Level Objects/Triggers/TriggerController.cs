@@ -9,13 +9,12 @@ public class TriggerController : MonoBehaviour
      * If allowOverCount is true then there will be no concequences for going over the required number.
      * If allowOverCount is false then the door will close when the required number is exceeded.
      */
+
     [SerializeField]
     private bool allowOverCount = true;
-
     //how many triggers are needed to activate the triggerable.
     [SerializeField]
     private int requiredTriggers = 2;
-
     [SerializeField]
     private UnityEvent TriggerActivate;
     [SerializeField]
@@ -25,12 +24,14 @@ public class TriggerController : MonoBehaviour
 
     public void AddOne()
     {
-        ++triggerCount;
+        triggerCount++;
+        CheckCount();
     }
 
     public void SubtractOne()
     {
-        --triggerCount;
+        triggerCount--;
+        CheckCount();
     }
 
     public void CheckCount()

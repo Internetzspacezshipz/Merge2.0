@@ -1,0 +1,7 @@
+This triggerbox uses an event system to control what functions activate in a target object... Complicated, I know. You probably just want to ask Cole to help you with it since he's some sort of god of shitty programming.
+
+Cannot Retrigger makes it so after you trigger it the first time it cannot be activated again.
+
+Triggers on boxes makes it trigger on boxes.
+
+I don't think I need to tell you these things, the names are pretty obvious.
