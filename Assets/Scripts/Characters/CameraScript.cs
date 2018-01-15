@@ -13,6 +13,7 @@ public class CameraScript : MonoBehaviour
     [SerializeField]
     private GameObject character1;
 
+
     private void Update()
     {
         cam0.transform.position = (character0.transform.position + character1.transform.position) / 2;

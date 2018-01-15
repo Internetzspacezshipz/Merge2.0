@@ -9,6 +9,8 @@ public class PlayerControl : Character
     //Jump force
     [SerializeField]
     private float jumpHeight = 1;
+    [SerializeField]
+    private CameraScript cameraScript;
 
 
     private bool canJump = false;
@@ -59,6 +61,7 @@ public class PlayerControl : Character
         }
         if (other.transform.CompareTag("Platform"))
         {
+            canJump = true;
             gameObject.transform.parent = other.transform;
         }
     }
@@ -71,6 +74,7 @@ public class PlayerControl : Character
         }
         if (other.transform.CompareTag("Platform"))
         {
+            canJump = true;
             gameObject.transform.parent = other.transform;
         }
     }
@@ -78,6 +82,7 @@ public class PlayerControl : Character
     private void OnTriggerExit2D(Collider2D other)
     {
         canJump = false;
-        gameObject.transform.parent = null;
+        gameObject.transform.parent = cameraScript.gameObject.transform;
+
     }
 }
