@@ -21,4 +21,9 @@ public class GameManager : MonoBehaviour
         sceneNumber = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneNumber);
     }
+
+    public void NextLevel(int sceneNumber)
+    {
+        SceneManager.LoadScene(sceneNumber);
+    }
 }
