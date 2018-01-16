@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 3f939fc189114c34487f2100aa27d0a0
-timeCreated: 1516137328
+guid: 7f4dbea2237b50a40947f7cb3b475317
+timeCreated: 1516138768
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
-  icon: {instanceID: 0}
+  icon: {fileID: -6431860639581277017, guid: 0000000000000000d000000000000000, type: 0}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

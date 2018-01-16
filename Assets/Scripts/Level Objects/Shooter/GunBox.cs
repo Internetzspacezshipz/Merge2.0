@@ -8,7 +8,7 @@ public class GunBox : MonoBehaviour
     [SerializeField]
     private Bullet bullet;
     [SerializeField]
-    private bool active = true;
+    internal bool active = true;
     [SerializeField]
     private bool _destroyOnBox = true;
     [SerializeField]

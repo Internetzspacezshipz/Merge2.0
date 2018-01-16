@@ -1,0 +1,2 @@
+So, this guy is weird, he moves automatically, you can turn him on and off with triggers though.
+To set locations to go to you must set the vector2s manually in worldspace. Basically, just go down to the script section of this guy and set the vectors yourself. You can add more places for it to go as well. It will always go in order.
