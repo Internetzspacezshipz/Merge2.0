@@ -64,6 +64,10 @@ public class PlayerControl : Character
             canJump = true;
             gameObject.transform.parent = other.transform;
         }
+        if (other.transform.CompareTag("Box"))
+        {
+            canJump = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -76,6 +80,10 @@ public class PlayerControl : Character
         {
             canJump = true;
             gameObject.transform.parent = other.transform;
+        }
+        if (other.transform.CompareTag("Box"))
+        {
+            canJump = true;
         }
     }
 

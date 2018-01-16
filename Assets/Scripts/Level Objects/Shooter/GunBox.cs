@@ -14,7 +14,20 @@ public class GunBox : MonoBehaviour
     [SerializeField]
     private bool _destroyBox = false;
     [SerializeField]
-    private Vector2 _direction = new Vector2(1000,0);
+    private Vector2 _direction = new Vector2(1000, 0);
+    [SerializeField]
+    private float rateOfFire = 1.0f;
+
+    private IEnumerator fire;
+
+    private void Awake()
+    {
+        if (active == true)
+        {
+            fire = AutoFire();
+            StartCoroutine(fire);
+        }
+    }
 
     private void Start()
     {
@@ -23,12 +36,12 @@ public class GunBox : MonoBehaviour
         bullet.destroyBox = _destroyBox;
     }
 
-    private void Update()
+    private IEnumerator AutoFire()
     {
-        if (active == true)
+        while (active == true)
         {
-
             Instantiate(bullet, transform);
+            yield return new WaitForSeconds(rateOfFire);
         }
     }
 }
