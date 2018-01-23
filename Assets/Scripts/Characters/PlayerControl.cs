@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerControl : Character
+public class PlayerControl : MonoBehaviour
 {
     #region variables
     //Movement speed
@@ -12,13 +12,36 @@ public class PlayerControl : Character
     [SerializeField]
     private CameraScript cameraScript;
 
+    private Rigidbody2D _RB;
 
     private bool canJump = false;
 
+    public bool alive = true;
 
     internal float windEffect = 0f;
 
     #endregion
+
+
+
+    private void Awake()
+    {
+        _RB = GetComponent<Rigidbody2D>();
+    }
+
+    //add velocity
+    internal void Move(float moveSpeed, int moveDirection)
+    {
+        _RB.velocity = new Vector2(moveSpeed * moveDirection, _RB.velocity.y);
+    }
+
+    //add jumping velocity
+    protected void Jump(float jumpHeight)
+    {
+        _RB.velocity = new Vector2(_RB.velocity.x, jumpHeight);
+    }
+
+
 
     private void Update()
     {

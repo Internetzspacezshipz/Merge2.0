@@ -26,6 +26,16 @@ public class RailPlatform : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
+    public void SetActive()
+    {
+        active = true;
+    }
+
+    public void SetInactive()
+    {
+        active = false;
+    }
+
     private IEnumerator AutoLoop()
     {
         while (active == true)

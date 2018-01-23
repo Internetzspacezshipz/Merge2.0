@@ -11,7 +11,7 @@ public class WinZone : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            GameManager.instance.NextLevel(levelToLoad);
+            GameManager.instance.LoadLevel(levelToLoad);
         }
     }
 }
