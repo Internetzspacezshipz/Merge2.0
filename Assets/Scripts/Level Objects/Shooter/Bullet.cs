@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameManager.instance.RestartGame();
+            GameManager.instance.FailUI();
         }
         if (collision.CompareTag("Ground"))
         {

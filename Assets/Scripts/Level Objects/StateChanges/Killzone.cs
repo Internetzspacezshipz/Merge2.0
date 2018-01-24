@@ -9,7 +9,7 @@ public class Killzone : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            GameManager.instance.RestartGame();
+            GameManager.instance.FailUI();
         }
     }
 }
