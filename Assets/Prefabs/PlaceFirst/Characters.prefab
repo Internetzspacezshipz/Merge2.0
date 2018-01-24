@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114678859906757082}
   - component: {fileID: 70491425598375866}
   - component: {fileID: 61449993756297994}
+  - component: {fileID: 95108958240662664}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Player
@@ -110,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866839610912216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.22, y: 59.39, z: -9}
+  m_LocalPosition: {x: -34.2, y: 64.64, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4607453598047798}
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1052489382448190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.2, y: 32.9, z: 0}
+  m_LocalPosition: {x: -22.22, y: 28.513, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4407881087331966}
@@ -298,8 +299,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 2.56}
-    newSize: {x: 1.28, y: 2.56}
+    oldSize: {x: 3.02, y: 2.74}
+    newSize: {x: 3.02, y: 2.74}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -323,8 +324,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 2.56}
-    newSize: {x: 1.28, y: 2.56}
+    oldSize: {x: 4.91, y: 4.71}
+    newSize: {x: 4.91, y: 4.71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -369,6 +370,23 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333784356012526}
   m_Enabled: 1
+--- !u!95 &95108958240662664
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052489382448190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6de8547fa3af06e40ab0840554cb7d6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95555660432444864
 Animator:
   serializedVersion: 3
@@ -400,6 +418,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpHeight: 14
   cameraScript: {fileID: 114789689031425978}
+  alive: 1
 --- !u!114 &114678859906757082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -414,6 +433,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpHeight: 14
   cameraScript: {fileID: 114789689031425978}
+  alive: 1
 --- !u!114 &114789689031425978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -478,12 +498,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e69fa0839ff687d4d888d7532a52814e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a2622da0cfa91d4eb49e0d4bd8f86b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 2.56}
+  m_Size: {x: 3.02, y: 2.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -522,12 +542,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: e69fa0839ff687d4d888d7532a52814e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b35613fea236aed4b8145d11110ff994, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 2.56}
+  m_Size: {x: 4.91, y: 4.71}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
