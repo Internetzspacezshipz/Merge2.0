@@ -16,28 +16,17 @@ public class FailMenuController : MonoBehaviour
     void Start()
     {
         Button checkBtn = checkpointButton.GetComponent<Button>();
-        checkBtn.onClick.AddListener(CheckLoad);
+        checkBtn.onClick.AddListener(GameManager.instance.LoadCheckpoint);
 
         Button mainMenuBtn = mainMenuButton.GetComponent<Button>();
         mainMenuBtn.onClick.AddListener(MenuLoad);
 
         Button restartBtn = mainMenuButton.GetComponent<Button>();
-        restartBtn.onClick.AddListener(Restart);
-    }
-
-    private void CheckLoad()
-    {
-        throw new NotImplementedException();
+        restartBtn.onClick.AddListener(GameManager.instance.RestartGame);
     }
 
     private void MenuLoad()
     {
         GameManager.instance.LoadLevel(0);
     }
-
-    private void Restart()
-    {
-        GameManager.instance.RestartGame();
-    }
-
 }
