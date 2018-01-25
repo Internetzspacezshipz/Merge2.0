@@ -38,6 +38,8 @@ public class PlayerControl : MonoBehaviour
     private bool audioPlaying = false;
     private bool audioOn = true;
 
+    public bool standingOnBox = false;
+
 
     #endregion
 
@@ -140,15 +142,23 @@ public class PlayerControl : MonoBehaviour
         }
 
         //animator here too pls
-        if (_RB.velocity.x == 0)
+        if (_RB.velocity.y < 0 && canJump == false)
         {
+            _Animator.SetBool("IsGoingUp", true);
 
         }
 
         //animator here pls
-        if (_RB.velocity.y > 0)
+        if (_RB.velocity.y > 0 && canJump == false)
         {
+            _Animator.SetBool("IsFalling", true);
 
+        }
+
+        if (canJump == true)
+        {
+            _Animator.SetBool("IsFalling", false);
+            _Animator.SetBool("IsGoingUp", false);
         }
     }
 
@@ -158,15 +168,20 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.transform.CompareTag("Ground"))
         {
+            standingOnBox = false;
+
             canJump = true;
         }
         if (other.transform.CompareTag("Platform"))
         {
+            standingOnBox = false;
+
             canJump = true;
             gameObject.transform.parent = other.transform;
         }
         if (other.transform.CompareTag("Box"))
         {
+            standingOnBox = true;
             canJump = true;
         }
     }
@@ -175,15 +190,20 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.transform.CompareTag("Ground"))
         {
+            standingOnBox = false;
+
             canJump = true;
         }
         if (other.transform.CompareTag("Platform"))
         {
+            standingOnBox = false;
+
             canJump = true;
             gameObject.transform.parent = other.transform;
         }
         if (other.transform.CompareTag("Box"))
         {
+            standingOnBox = true;
             canJump = true;
         }
     }
@@ -191,6 +211,7 @@ public class PlayerControl : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         _ASWalking.Stop();
+        standingOnBox = false;
 
         canJump = false;
         gameObject.transform.parent = cameraScript.gameObject.transform;

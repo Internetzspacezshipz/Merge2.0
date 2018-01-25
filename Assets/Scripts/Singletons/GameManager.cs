@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     private Canvas pauseUIObject;
     public int currentCheckpoint = 0;
 
-
     private void Awake()
     {
         if (instance == null)
@@ -25,6 +24,9 @@ public class GameManager : MonoBehaviour
         Destroy(this);
     }
 
+    private void Update()
+    {
+    }
 
 
 
