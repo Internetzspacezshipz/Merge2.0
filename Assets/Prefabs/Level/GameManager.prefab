@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e76effcc97f1a84e8b3320fc78f503d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasObject: {fileID: 223554405275875444, guid: be76fa9edc260914489a54d9052c19c4,
-    type: 2}
+  failUI: {fileID: 223554405275875444, guid: be76fa9edc260914489a54d9052c19c4, type: 2}
+  pauseUI: {fileID: 0}
   currentCheckpoint: 0

@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 223554405275875444}
   - component: {fileID: 114619752991590276}
   - component: {fileID: 114645265031618808}
-  - component: {fileID: 114984846950341088}
   m_Layer: 5
   m_Name: FailScreen
   m_TagString: Untagged
@@ -363,7 +362,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114717781916661572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114018780164734046, guid: 13e44bfc56b7fb44ca89399dc72cd989,
+          type: 2}
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114717781916661572
@@ -431,7 +442,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114205323245653532}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114018780164734046, guid: 13e44bfc56b7fb44ca89399dc72cd989,
+          type: 2}
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114908731986037032
@@ -472,23 +495,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114628748068764826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114018780164734046, guid: 13e44bfc56b7fb44ca89399dc72cd989,
+          type: 2}
+        m_MethodName: LoadCheckpoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114984846950341088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1360663493561016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8e44700286327042b492731dc027c16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkpointButton: {fileID: 114908731986037032}
-  mainMenuButton: {fileID: 114700385501483236}
-  restartButton: {fileID: 114732112336226928}
 --- !u!222 &222069129693944054
 CanvasRenderer:
   m_ObjectHideFlags: 1

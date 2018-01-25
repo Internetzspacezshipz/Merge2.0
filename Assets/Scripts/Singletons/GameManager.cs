@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
     private int sceneNumber;
     private Canvas canvas;
     [SerializeField]
-    private Canvas canvasObject;
+    private Canvas failUI;
+    [SerializeField]
+    private Canvas pauseUI;
+    private Canvas pauseUIObject;
     public int currentCheckpoint = 0;
 
 
@@ -22,22 +25,37 @@ public class GameManager : MonoBehaviour
         Destroy(this);
     }
 
-    private void OnLevelWasLoaded(int level)
+
+
+
+
+    void OnEnable()
+    {
+        //Tell our 'OnLevelFinishedLoading' function to start listening for a scene change as soon as this script is enabled.
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    }
+
+    void OnDisable()
+    {
+        //Tell our 'OnLevelFinishedLoading' function to stop listening for a scene change as soon as this script is disabled. Remember to always have an unsubscription for every delegate you subscribe to!
+        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         Time.timeScale = 1;
 
-        sceneNumber = level;
+        sceneNumber = scene.buildIndex;
     }
 
     public void RestartGame()
     {
+        Debug.Log("RestartingGame");
         Time.timeScale = 1;
 
         sceneNumber = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneNumber);
     }
-
-
 
     public void LoadLevel(int levelNumber)
     {
@@ -48,12 +66,11 @@ public class GameManager : MonoBehaviour
 
     public void FailUI()
     {
-        Instantiate(canvasObject);
+        Instantiate(failUI);
         canvas = FindObjectOfType<Canvas>();
 
         Time.timeScale = 0;
         canvas.enabled = true;
-
     }
 
     public void LoadCheckpoint()

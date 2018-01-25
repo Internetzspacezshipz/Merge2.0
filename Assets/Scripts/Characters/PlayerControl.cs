@@ -20,9 +20,10 @@ public class PlayerControl : MonoBehaviour
 
     private bool canJump = false;
 
-    public bool alive = true;
-
     internal float windEffect = 0f;
+
+    private bool direction;
+
 
     #endregion
 
@@ -49,17 +50,24 @@ public class PlayerControl : MonoBehaviour
         }
         if (moveDirection < 0)
         {
+            direction = true;
             _SR.flipX = true;
         }
         else if (moveDirection > 0)
         {
+            direction = false;
             _SR.flipX = false;
+        }
+        else if (moveDirection == 0)
+        {
+            _SR.flipX = direction;
         }
     }
 
     //add jumping velocity
     protected void Jump(float jumpHeight)
     {
+
         _RB.velocity = new Vector2(_RB.velocity.x, jumpHeight);
     }
 
@@ -84,10 +92,14 @@ public class PlayerControl : MonoBehaviour
                 Move(moveSpeed+windEffect, 1);
             }
         }
+
+        //Input.GetKeyDown
+
         else if (movement == 0)
         {
             Move(0+windEffect, 1);
         }
+
         //jumping
         if (vertical != 0)
         {
@@ -96,7 +108,15 @@ public class PlayerControl : MonoBehaviour
                 Jump(jumpHeight);
             }
         }
+
+        //animator here pls
+        if (_RB.velocity.y > 0)
+        {
+
+        }
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

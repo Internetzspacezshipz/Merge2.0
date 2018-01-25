@@ -23,7 +23,7 @@ public class Boxes : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player") && Input.GetKey(KeyCode.F))
+        if (other.transform.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
             gameObject.transform.parent = other.transform;
 

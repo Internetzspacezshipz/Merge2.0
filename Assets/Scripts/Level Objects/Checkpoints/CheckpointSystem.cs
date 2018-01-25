@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CheckpointSystem : MonoBehaviour
 {
@@ -16,6 +14,10 @@ public class CheckpointSystem : MonoBehaviour
     [SerializeField]
     private Checkpoint[] checkpointsSoul = new Checkpoint[numberOfCheckpoints];
 
+
+    private Vector2[] checkpointBodyLocation = new Vector2[numberOfCheckpoints];
+    private Vector2[] checkpointSoulLocation = new Vector2[numberOfCheckpoints];
+
     [SerializeField]
     private Body Body;
 
@@ -30,6 +32,7 @@ public class CheckpointSystem : MonoBehaviour
     {
         if (instance == null)
         {
+            DontDestroyOnLoad(gameObject);
             Body = FindObjectOfType<Body>();
             Soul = FindObjectOfType<Soul>();
 
@@ -41,6 +44,7 @@ public class CheckpointSystem : MonoBehaviour
 
     public void SpawnAtCheckpoint()
     {
+
 
         Debug.Log(GameManager.instance.currentCheckpoint);
 
