@@ -9,6 +9,8 @@ public class MenuController : MonoBehaviour
     private Button playButton;
     [SerializeField]
     private int playButtonLevel = 1;
+    [SerializeField]
+    private Canvas controlsMenu;
 
     [SerializeField]
     private Button quitButton;
@@ -21,6 +23,8 @@ public class MenuController : MonoBehaviour
 
         Button quitBtn = quitButton.GetComponent<Button>();
         quitBtn.onClick.AddListener(Quit);
+
+        controlsMenu.enabled = false;
     }
 
     void Load()
