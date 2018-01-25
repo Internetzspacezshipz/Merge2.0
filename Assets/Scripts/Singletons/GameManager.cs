@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private Canvas canvas;
     [SerializeField]
     private Canvas canvasObject;
+    public int currentCheckpoint = 0;
 
 
     private void Awake()
@@ -26,13 +27,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
 
         sceneNumber = level;
-
-        if (sceneNumber != 0 && sceneNumber != 1 && sceneNumber != 2)
-        {
-            Instantiate(canvasObject);
-            canvas = FindObjectOfType<Canvas>();
-            canvas.enabled = false;
-        }
     }
 
     public void RestartGame()
@@ -43,22 +37,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneNumber);
     }
 
+
+
     public void LoadLevel(int levelNumber)
     {
         Time.timeScale = 1;
-
-        SceneManager.LoadScene(levelNumber);
+        
+        SceneManager.LoadScene(levelNumber, LoadSceneMode.Single);
     }
 
     public void FailUI()
     {
+        Instantiate(canvasObject);
+        canvas = FindObjectOfType<Canvas>();
+
         Time.timeScale = 0;
         canvas.enabled = true;
+
     }
 
-    public void UnloadFailUI()
+    public void LoadCheckpoint()
     {
-        Time.timeScale = 1;
-        canvas.enabled = false;
+        RestartGame();
+        CheckpointSystem.instance.SpawnAtCheckpoint();
     }
+
 }

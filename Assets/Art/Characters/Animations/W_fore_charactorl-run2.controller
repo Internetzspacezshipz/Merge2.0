@@ -18,7 +18,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: IsFalling
     m_Type: 4
@@ -303,7 +303,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: stickman_idle
+  m_Name: w_body_idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -449,10 +449,10 @@ AnimatorStateMachine:
     m_Position: {x: 492, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102640450106228920}
-    m_Position: {x: 312, y: 252, z: 0}
+    m_Position: {x: 264, y: 252, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102665946363620460}
-    m_Position: {x: 540, y: 408, z: 0}
+    m_Position: {x: 492, y: 396, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101460681403384638}
@@ -462,6 +462,6 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 24, y: 252, z: 0}
   m_EntryPosition: {x: 120, y: 156, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ExitPosition: {x: 612, y: 192, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102120894890181932}

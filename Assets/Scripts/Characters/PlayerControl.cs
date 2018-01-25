@@ -13,6 +13,10 @@ public class PlayerControl : MonoBehaviour
     private CameraScript cameraScript;
 
     private Rigidbody2D _RB;
+    private SpriteRenderer _SR;
+
+    [SerializeField]
+    private Animator _Animator;
 
     private bool canJump = false;
 
@@ -27,12 +31,30 @@ public class PlayerControl : MonoBehaviour
     private void Awake()
     {
         _RB = GetComponent<Rigidbody2D>();
+        _Animator = GetComponent<Animator>();
+        _SR = GetComponent<SpriteRenderer>();
     }
 
     //add velocity
     internal void Move(float moveSpeed, int moveDirection)
     {
         _RB.velocity = new Vector2(moveSpeed * moveDirection, _RB.velocity.y);
+        if (_RB.velocity.x != 0)
+        {
+            _Animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            _Animator.SetBool("IsWalking", false);
+        }
+        if (moveDirection < 0)
+        {
+            _SR.flipX = true;
+        }
+        else if (moveDirection > 0)
+        {
+            _SR.flipX = false;
+        }
     }
 
     //add jumping velocity
