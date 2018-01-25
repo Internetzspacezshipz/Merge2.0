@@ -81,4 +81,9 @@ public class GameManager : MonoBehaviour
         CheckpointSystem.instance.SpawnAtCheckpoint();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }
