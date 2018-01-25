@@ -4798,6 +4798,10 @@ MonoBehaviour:
   jumpHeight: 14
   cameraScript: {fileID: 12096874}
   _Animator: {fileID: 0}
+<<<<<<< HEAD:Assets/Levels/Programming.unity
+=======
+  standingOnBox: 0
+>>>>>>> parent of e750c48... Wind: Added audio, improved usability.:Assets/Scenes/Programming.unity
 --- !u!1001 &2010457048
 Prefab:
   m_ObjectHideFlags: 0
