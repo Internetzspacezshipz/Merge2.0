@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         _RB.AddForce(direction);
-        gameObject.transform.SetParent(null);
     }
 
     private void Update()
