@@ -599,7 +599,6 @@ Tilemap:
   - m_RefCount: 30
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 1
-<<<<<<< HEAD
     m_Data: {r: 0.7786615, g: 0.5019282, b: 0.5878695, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.93261695, g: 0.6184755, b: 0.62436634, a: 1}
@@ -607,15 +606,6 @@ Tilemap:
     m_Data: {r: 0.72816783, g: 0.3135081, b: 0.3885618, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0.87368643, g: 0.48934025, b: 0.56361264, a: 1}
-=======
-    m_Data: {r: 0.8681133, g: 0.44872776, b: 0.5824326, a: 1}
-  - m_RefCount: 1
-    m_Data: {r: 0.95150214, g: 0.5102739, b: 0.5910997, a: 1}
-  - m_RefCount: 1
-    m_Data: {r: 0.7910464, g: 0.55017877, b: 0.5729855, a: 1}
-  - m_RefCount: 1
-    m_Data: {r: 0.92307913, g: 0.63088644, b: 0.6327061, a: 1}
->>>>>>> parent of e750c48... Wind: Added audio, improved usability.
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -8, y: -5, z: 0}
