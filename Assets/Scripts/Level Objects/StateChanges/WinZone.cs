@@ -5,7 +5,7 @@ using UnityEngine;
 public class WinZone : MonoBehaviour
 {
     [SerializeField]
-    private int levelToLoad = 0;
+    private string levelToLoad = "MainMenu";
 
     private void OnTriggerEnter2D(Collider2D other)
     {

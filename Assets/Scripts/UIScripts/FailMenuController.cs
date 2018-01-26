@@ -27,6 +27,6 @@ public class FailMenuController : MonoBehaviour
 
     private void MenuLoad()
     {
-        GameManager.instance.LoadLevel(0);
+        GameManager.instance.LoadLevel("FailMenu");
     }
 }

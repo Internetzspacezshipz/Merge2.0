@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private Button playButton;
     [SerializeField]
-    private int playButtonLevel = 1;
+    private string playButtonLevel = "Level Design";
     [SerializeField]
     private Canvas controlsMenu;
 

@@ -59,11 +59,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneNumber);
     }
 
-    public void LoadLevel(int levelNumber)
+    public void LoadLevel(string levelName)
     {
         Time.timeScale = 1;
         
-        SceneManager.LoadScene(levelNumber, LoadSceneMode.Single);
+        SceneManager.LoadScene(levelName, LoadSceneMode.Single);
     }
 
     public void FailUI()
