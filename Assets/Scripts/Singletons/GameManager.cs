@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private Canvas pauseUIObject;
     public int currentCheckpoint = 0;
 
+
     private void Awake()
     {
         if (instance == null)
@@ -73,9 +74,15 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0;
         canvas.enabled = true;
+
+        AudioSource[] audioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        foreach (AudioSource audioS in audioSources)
+        {
+            audioS.Stop();
+        }
     }
 
-    public void LoadCheckpoint()
+public void LoadCheckpoint()
     {
         RestartGame();
         CheckpointSystem.instance.SpawnAtCheckpoint();

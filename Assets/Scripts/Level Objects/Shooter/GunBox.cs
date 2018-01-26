@@ -18,6 +18,7 @@ public class GunBox : MonoBehaviour
     [SerializeField]
     private float rateOfFire = 1.0f;
 
+
     private IEnumerator fire;
 
     private void Awake()
@@ -42,6 +43,7 @@ public class GunBox : MonoBehaviour
         {
             Instantiate(bullet, transform);
             yield return new WaitForSeconds(rateOfFire);
+            
         }
     }
 }

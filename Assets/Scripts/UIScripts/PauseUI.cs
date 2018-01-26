@@ -1,10 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseUI : MonoBehaviour
 {
     private Canvas canvas;
+
+    [SerializeField]
+    private Button mainMenuButton;
+
+    void Start()
+    {
+        Button checkBtn = mainMenuButton.GetComponent<Button>();
+        checkBtn.onClick.AddListener(MainMenu);
+    }
+
+
+    private void MainMenu()
+    {
+        GameManager.instance.LoadLevel("MainMenu");
+    }
+
 
     private void Awake()
     {
