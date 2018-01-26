@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     private Canvas pauseUIObject;
     public int currentCheckpoint = 0;
 
-
     private void Awake()
     {
         if (instance == null)
@@ -24,13 +23,6 @@ public class GameManager : MonoBehaviour
         }
         Destroy(this);
     }
-
-    private void Update()
-    {
-    }
-
-
-
 
     void OnEnable()
     {
@@ -82,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-public void LoadCheckpoint()
+    public void LoadCheckpoint()
     {
         RestartGame();
         CheckpointSystem.instance.SpawnAtCheckpoint();
