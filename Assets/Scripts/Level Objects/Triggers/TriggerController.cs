@@ -22,7 +22,7 @@ public class TriggerController : MonoBehaviour
     [SerializeField]
     private UnityEvent TriggerEnd;
     //how many triggers have been activated so far, MultiTrigger adds one every time they are triggered. They subtract one if they are deactivated.
-    internal int triggerCount = 0;
+    internal int triggerCount = -1;
 
 
     public void AddOne()
