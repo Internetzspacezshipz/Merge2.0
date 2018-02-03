@@ -2,6 +2,7 @@
 using UnityEngine.Events;
 using System.Collections;
 
+[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Collider2D))]
 public class MySwitch : MonoBehaviour
 {

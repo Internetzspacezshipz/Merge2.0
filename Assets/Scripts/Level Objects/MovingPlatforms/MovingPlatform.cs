@@ -26,8 +26,7 @@ public class MovingPlatform : MonoBehaviour
         DestroyObject(temp);
         if (autoRun == true)
         {
-            coroutine = AutoLoop();
-            StartCoroutine(coroutine);
+            StartCoroutine(AutoLoop());
         }
     }
 

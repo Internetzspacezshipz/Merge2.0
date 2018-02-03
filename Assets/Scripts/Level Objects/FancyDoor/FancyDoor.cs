@@ -8,6 +8,9 @@ public class FancyDoor : MonoBehaviour
     private GameObject doorLeft;
     [SerializeField]
     private GameObject doorRight;
+    [SerializeField]
+    private GameObject lightObject;
+    private SpriteRenderer lightSprite;
 
     private Transform _TDL;
     private Transform _TDR;
@@ -44,6 +47,11 @@ public class FancyDoor : MonoBehaviour
 
         _PDLD = _PDLO - new Vector3(openDistance, 0, 0);
         _PDRD = _PDRO + new Vector3(openDistance, 0, 0);
+
+        lightSprite = lightObject.GetComponent<SpriteRenderer>();
+
+        lightSprite.enabled = false;
+
     }
 
     public void Open()
@@ -55,6 +63,8 @@ public class FancyDoor : MonoBehaviour
             StartCoroutine(EOpen());
             _TDL.DOMove(_PDLD, duration).SetEase(easeType);
             _TDR.DOMove(_PDRD, duration).SetEase(easeType);
+
+            lightSprite.enabled = true;
         }
         open = true;
     }
@@ -67,6 +77,9 @@ public class FancyDoor : MonoBehaviour
             StartCoroutine(EClose());
             _TDL.DOMove(_PDLO, duration).SetEase(easeType);
             _TDR.DOMove(_PDRO, duration).SetEase(easeType);
+
+            lightSprite.enabled = false;
+
         }
         open = false;
     }
