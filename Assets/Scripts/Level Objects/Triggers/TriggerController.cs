@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+
 
 public class TriggerController : MonoBehaviour
 {
@@ -21,6 +23,7 @@ public class TriggerController : MonoBehaviour
     private UnityEvent TriggerEnd;
     //how many triggers have been activated so far, MultiTrigger adds one every time they are triggered. They subtract one if they are deactivated.
     internal int triggerCount = 0;
+
 
     public void AddOne()
     {
@@ -51,4 +54,5 @@ public class TriggerController : MonoBehaviour
             TriggerEnd.Invoke();
         }
     }
+
 }

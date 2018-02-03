@@ -92,6 +92,7 @@ public class PlayerControl : MonoBehaviour
     //add jumping velocity
     protected void Jump(float jumpHeight)
     {
+
         _ASJumping.Play();
         _RB.velocity = new Vector2(_RB.velocity.x, jumpHeight);
 
@@ -142,14 +143,14 @@ public class PlayerControl : MonoBehaviour
         }
 
         //animator here too pls
-        if (_RB.velocity.y < 0 && canJump == false)
+        if (_RB.velocity.y > 0 && canJump == false)
         {
             _Animator.SetBool("IsGoingUp", true);
 
         }
 
         //animator here pls
-        if (_RB.velocity.y > 0 && canJump == false)
+        if (_RB.velocity.y < 0 && canJump == false)
         {
             _Animator.SetBool("IsFalling", true);
 

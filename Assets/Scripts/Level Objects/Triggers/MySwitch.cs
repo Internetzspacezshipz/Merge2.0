@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
 public class MySwitch : MonoBehaviour
@@ -15,17 +16,28 @@ public class MySwitch : MonoBehaviour
     [SerializeField]
     private UnityEvent TriggerExit;
     private bool triggered = false;
+    [SerializeField]
+    private bool playsAudio = true;
+    private bool triggerTimeNotUp = false;
+
+    private AudioSource _AS;
 
     #endregion
 
     private void Awake()
     {
         GetComponent<Collider2D>().isTrigger = true;
+        _AS = GetComponent<AudioSource>();
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (playsAudio == true && triggerTimeNotUp == false)
+        {
+            _AS.Play();
+            StartCoroutine(WaitTime());
+        }
+
         if (other.transform.CompareTag("Player") && triggered == false)
         {
             TriggerEnter.Invoke();
@@ -46,6 +58,8 @@ public class MySwitch : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+
+
         if (other.transform.CompareTag("Player"))
         {
             TriggerExit.Invoke();
@@ -56,5 +70,12 @@ public class MySwitch : MonoBehaviour
             TriggerEnter.Invoke();
 
         }
+    }
+
+    private IEnumerator WaitTime()
+    {
+        triggerTimeNotUp = true;
+        yield return new WaitForSeconds(0.3f);
+        triggerTimeNotUp = false;
     }
 }
