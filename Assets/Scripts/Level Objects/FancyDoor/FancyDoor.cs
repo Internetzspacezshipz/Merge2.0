@@ -29,6 +29,7 @@ public class FancyDoor : MonoBehaviour
     private Collider2D _Collider;
     private AudioSource _AS;
 
+    private bool open = false;
 
     private void Awake()
     {
@@ -47,19 +48,27 @@ public class FancyDoor : MonoBehaviour
 
     public void Open()
     {
-        _AS.Play();
-        StartCoroutine(EOpen());
-        _TDL.DOMove(_PDLD, duration).SetEase(easeType);
-        _TDR.DOMove(_PDRD, duration).SetEase(easeType);
+        if (open == false)
+        {
+            _AS.Play();
+
+            StartCoroutine(EOpen());
+            _TDL.DOMove(_PDLD, duration).SetEase(easeType);
+            _TDR.DOMove(_PDRD, duration).SetEase(easeType);
+        }
+        open = true;
     }
 
     public void Close()
     {
-        _AS.Play();
-
-        StartCoroutine(EClose());
-        _TDL.DOMove(_PDLO, duration).SetEase(easeType);
-        _TDR.DOMove(_PDRO, duration).SetEase(easeType);
+        if (open == true)
+        {
+            _AS.Play();
+            StartCoroutine(EClose());
+            _TDL.DOMove(_PDLO, duration).SetEase(easeType);
+            _TDR.DOMove(_PDRO, duration).SetEase(easeType);
+        }
+        open = false;
     }
 
     private IEnumerator EOpen()
