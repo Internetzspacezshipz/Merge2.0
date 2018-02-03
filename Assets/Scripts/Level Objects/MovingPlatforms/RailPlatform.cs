@@ -20,7 +20,7 @@ public class RailPlatform : MonoBehaviour
     [SerializeField]
     Ease easeType;
 
-    private Tweener
+    private Tweener tween;
 
     private IEnumerator coroutine;
 
@@ -29,6 +29,10 @@ public class RailPlatform : MonoBehaviour
     {
         coroutine = AutoLoop();
         StartCoroutine(coroutine);
+    }
+
+    private void Start()
+    {
     }
 
     public void SetActive()
@@ -47,7 +51,7 @@ public class RailPlatform : MonoBehaviour
         {
             foreach (Vector2 location in locations)
             {
-                transform.DOMove(location, duration);
+                transform.DOMove(location, duration).SetEase(easeType);
                 yield return new WaitForSeconds(duration);
             }
         }

@@ -13,6 +13,9 @@ public class MovingPlatform : MonoBehaviour
     private GameObject endIndicator;
     private Vector3 origin;
 
+    [SerializeField]
+    Ease easeType;
+
 
     private IEnumerator coroutine;
 
@@ -32,12 +35,12 @@ public class MovingPlatform : MonoBehaviour
 
     public void MoveToEnd()
     {
-        transform.DOMove(endIndicator.transform.position, duration);
+        transform.DOMove(endIndicator.transform.position, duration).SetEase(easeType);
     }
 
     public void MoveToOrigin()
     {
-        transform.DOMove(origin, duration);
+        transform.DOMove(origin, duration).SetEase(easeType);
     }
 
 
