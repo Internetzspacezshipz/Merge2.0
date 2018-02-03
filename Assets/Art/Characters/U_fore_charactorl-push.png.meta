@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 64986d2dd962645418e07f477d4568d6
-timeCreated: 1516775796
+timeCreated: 1517698339
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: U_fore_charactorl-push_0
+    21300002: U_fore_charactorl-push_1
+    21300004: U_fore_charactorl-push_2
+    21300006: U_fore_charactorl-push_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -65,9 +69,76 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: U_fore_charactorl-push_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 118
+        width: 299
+        height: 288
+      alignment: 9
+      pivot: {x: 0.6283183, y: 0.460528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: U_fore_charactorl-push_1
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 110
+        width: 314
+        height: 270
+      alignment: 9
+      pivot: {x: 0.64734507, y: 0.526396}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: U_fore_charactorl-push_2
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 113
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: U_fore_charactorl-push_3
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 109
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
