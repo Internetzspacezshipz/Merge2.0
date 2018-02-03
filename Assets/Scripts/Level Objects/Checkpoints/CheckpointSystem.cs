@@ -2,9 +2,6 @@
 
 public class CheckpointSystem : MonoBehaviour
 {
-
-
-
     [SerializeField]
     private static int numberOfCheckpoints = 3;
 
