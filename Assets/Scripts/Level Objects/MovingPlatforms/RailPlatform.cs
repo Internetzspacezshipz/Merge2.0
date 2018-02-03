@@ -17,6 +17,11 @@ public class RailPlatform : MonoBehaviour
     [SerializeField]
     private float duration = 4.0f;
 
+    [SerializeField]
+    Ease easeType;
+
+    private Tweener
+
     private IEnumerator coroutine;
 
 
