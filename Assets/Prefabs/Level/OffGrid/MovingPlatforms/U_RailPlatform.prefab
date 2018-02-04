@@ -111,6 +111,7 @@ MonoBehaviour:
   - {x: -5, y: 42}
   - {x: 16, y: 42}
   duration: 4
+  easeType: 0
 --- !u!212 &212320708365384746
 SpriteRenderer:
   m_ObjectHideFlags: 1
