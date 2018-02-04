@@ -13,8 +13,6 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private CameraScript cameraScript;
 
-    //public AudioClip walk;
-    //public AudioClip jump;
 
     private IEnumerator coroutine;
 
