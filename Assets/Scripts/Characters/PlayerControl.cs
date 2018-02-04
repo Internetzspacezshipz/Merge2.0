@@ -29,7 +29,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private Animator _Animator;
 
-    internal bool canJump = false;
+    private bool canJump = false;
 
     internal float windEffect = 0f;
 
@@ -59,6 +59,8 @@ public class PlayerControl : MonoBehaviour
     {
         //StartCoroutine(coroutine);
     }
+
+
 
     //add velocity
     internal void Move(float moveSpeed, int moveDirection)
