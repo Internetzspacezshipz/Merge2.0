@@ -672,7 +672,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1612055285
+  randomSeed: 649755966
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1115,12 +1115,12 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 5
     enabled: 1
-    type: 4
-    angle: 0
+    type: 12
+    angle: 5.642916
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
-    donutRadius: 0.2
+    donutRadius: 0.87386537
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
@@ -1137,7 +1137,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.5287514
       mode: 0
       spread: 0
       speed:
@@ -4024,13 +4024,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188826894}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -24.52, y: 176.97, z: -0.73}
+  m_LocalRotation: {x: -0.61961025, y: -0.34070984, z: 0.34070984, w: 0.61961025}
+  m_LocalPosition: {x: -24.44, y: 186.08, z: -0.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -147.611, y: 89.99999, z: -90}
 --- !u!1001 &198861555
 Prefab:
   m_ObjectHideFlags: 0
