@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
 
     private IEnumerator coroutine;
 
+    internal bool boxHeld = false;
 
     private Rigidbody2D _RB;
     private SpriteRenderer _SR;
@@ -29,7 +30,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private Animator _Animator;
 
-    private bool canJump = false;
+    internal bool canJump = false;
 
     internal float windEffect = 0f;
 
