@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
     private float bulletTime = 1.0f;
     private Rigidbody2D _RB;
     public Vector2 direction;

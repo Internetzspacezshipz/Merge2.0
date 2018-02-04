@@ -101,6 +101,9 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+
+
+
         //movement inputs
         float movement = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Jump");
@@ -114,11 +117,11 @@ public class PlayerControl : MonoBehaviour
             }
             if (movement < 0)
             {
-                Move(moveSpeed-windEffect, -1);
+                Move(moveSpeed - windEffect, -1);
             }
             if (movement > 0)
             {
-                Move(moveSpeed+windEffect, 1);
+                Move(moveSpeed + windEffect, 1);
             }
         }
         //Input.GetKeyDown
@@ -129,7 +132,7 @@ public class PlayerControl : MonoBehaviour
 
             _SR.flipX = direction;
 
-            Move(0+windEffect, 1);
+            Move(0 + windEffect, 1);
         }
 
         //jumping
@@ -159,6 +162,52 @@ public class PlayerControl : MonoBehaviour
         {
             _Animator.SetBool("IsFalling", false);
             _Animator.SetBool("IsGoingUp", false);
+        }
+
+        //Animators here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if (boxHeld == true)
+        {
+            _Animator.SetBool("IsPushing", true);
+        }
+        else if (boxHeld == false)
+        {
+            _Animator.SetBool("IsPushing", false);
+        }
+
+
+        if (_RB.velocity == new Vector2(0, 0))
+        {
+
+
+            foreach (AnimatorControllerParameter parameter in _Animator.parameters)
+            {
+
+                _ASWalking.Stop();
+
+                _Animator.SetBool(parameter.name, false);
+            }
+
         }
     }
 

@@ -18,6 +18,7 @@ public class GunBox : MonoBehaviour
     [SerializeField]
     private float rateOfFire = 1.0f;
 
+    private Bullet bulletInstance;
 
     private IEnumerator fire;
 
@@ -30,20 +31,16 @@ public class GunBox : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        bullet.direction = _direction;
-        bullet.destroyOnBox = _destroyOnBox;
-        bullet.destroyBox = _destroyBox;
-    }
-
     private IEnumerator AutoFire()
     {
         while (active == true)
         {
-            Instantiate(bullet, transform);
+            bulletInstance = Instantiate(bullet, transform);
+            bulletInstance.direction = _direction;
+            bulletInstance.destroyOnBox = _destroyOnBox;
+            bulletInstance.destroyBox = _destroyBox;
+
             yield return new WaitForSeconds(rateOfFire);
-            
         }
     }
 }

@@ -46,9 +46,6 @@ public class RailPlatform : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
-    private void Start()
-    {
-    }
 
     public void SetActive()
     {
