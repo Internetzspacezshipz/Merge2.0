@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 
 public class Lever : MonoBehaviour
@@ -12,6 +13,12 @@ public class Lever : MonoBehaviour
     private UnityEvent TriggerOff;
     [SerializeField]
     private bool cannotRetrigger = true;
+
+    [SerializeField]
+    private GameObject lever;
+    [SerializeField]
+    private Ease easeType;
+
 
     private bool alreadyTriggered = false;
     private bool triggerTimeNotUp = false;
@@ -36,15 +43,30 @@ public class Lever : MonoBehaviour
 
                 TriggerOn.Invoke();
                 alreadyTriggered = true;
+                rotateLever();
             }
             else if (alreadyTriggered == true && cannotRetrigger == false && triggerTimeNotUp == false)
             {
                 audioSource.Play();
                 TriggerOff.Invoke();
                 alreadyTriggered = false;
+                rotateLever();
             }
 
             StartCoroutine(WaitTime());
+        }
+    }
+
+
+    private void rotateLever()
+    {
+        if (alreadyTriggered == true)
+        {
+            lever.transform.DORotate(new Vector3(0,0, -70), 0.3f).SetEase(easeType);
+        }
+        else
+        {
+            lever.transform.DORotate(new Vector3(0, 0, 0), 0.3f).SetEase(easeType);
         }
     }
 
