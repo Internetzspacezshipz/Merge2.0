@@ -32,6 +32,13 @@ public class RailPlatform : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Box"))
+        {
+            other.transform.SetParent(gameObject.transform, true);
+        }
+    }
 
     private void Awake()
     {
@@ -39,9 +46,6 @@ public class RailPlatform : MonoBehaviour
         StartCoroutine(coroutine);
     }
 
-    private void Start()
-    {
-    }
 
     public void SetActive()
     {

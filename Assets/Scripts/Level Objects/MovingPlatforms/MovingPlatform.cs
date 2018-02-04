@@ -45,6 +45,14 @@ public class MovingPlatform : MonoBehaviour
     }
 
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Box"))
+        {
+            other.transform.SetParent(gameObject.transform, true);
+        }
+    }
+
     public void MoveToEnd()
     {
         transform.DOMove(endPoint, duration).SetEase(easeType);
