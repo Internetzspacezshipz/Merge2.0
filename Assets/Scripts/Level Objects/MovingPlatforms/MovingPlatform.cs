@@ -12,6 +12,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private GameObject endIndicator;
     private Vector3 origin;
+    private Vector3 endPoint;
 
     [SerializeField]
     Ease easeType;
@@ -23,6 +24,10 @@ public class MovingPlatform : MonoBehaviour
     {
         origin = transform.position;
         SpriteRenderer temp = endIndicator.GetComponent<SpriteRenderer>();
+
+        endPoint = endIndicator.transform.position;
+
+
         DestroyObject(temp);
         if (autoRun == true)
         {
@@ -34,7 +39,7 @@ public class MovingPlatform : MonoBehaviour
 
     public void MoveToEnd()
     {
-        transform.DOMove(endIndicator.transform.position, duration).SetEase(easeType);
+        transform.DOMove(endPoint, duration).SetEase(easeType);
     }
 
     public void MoveToOrigin()
