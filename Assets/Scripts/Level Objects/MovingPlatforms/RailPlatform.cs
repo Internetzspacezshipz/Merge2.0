@@ -24,6 +24,14 @@ public class RailPlatform : MonoBehaviour
 
     private IEnumerator coroutine;
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Box"))
+        {
+            other.transform.SetParent(gameObject.transform, true);
+        }
+    }
+
 
     private void Awake()
     {

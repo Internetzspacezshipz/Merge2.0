@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50475958611253248}
   - component: {fileID: 60395703203149282}
   - component: {fileID: 212320708365384746}
+  - component: {fileID: 61096296516989236}
   m_Layer: 0
   m_Name: U_RailPlatform
   m_TagString: Platform
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141487324478902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 38.01, z: -1}
+  m_LocalPosition: {x: 32.29971, y: -77.04145, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,6 +93,31 @@ PolygonCollider2D:
       - {x: 0.03722477, y: -1.0029678}
       - {x: 2.0278006, y: -0.83940125}
       - {x: 2.4455738, y: 0.831337}
+--- !u!61 &61096296516989236
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141487324478902}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.04}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.9, y: 1.76}
+    newSize: {x: 4.9, y: 1.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.48, y: 0.42}
+  m_EdgeRadius: 0
 --- !u!114 &114246211391439710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +137,7 @@ MonoBehaviour:
   - {x: -5, y: 42}
   - {x: 16, y: 42}
   duration: 4
+  easeType: 0
 --- !u!212 &212320708365384746
 SpriteRenderer:
   m_ObjectHideFlags: 1

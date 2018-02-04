@@ -24,7 +24,6 @@ public class BoxPull : MonoBehaviour
             other.transform.SetParent(controller.gameObject.transform, false);
             Destroy(other.GetComponent<Rigidbody2D>());
             other.transform.position = controller.transform.position + holdLocation;
-            Debug.Log("This Ran");
             heldBox = other.gameObject;
             StartCoroutine(WaitForUnselect());
             controller.boxHeld = true;
@@ -37,23 +36,23 @@ public class BoxPull : MonoBehaviour
         {
             if (controller.canJump == false)
             {
-                Debug.Log("This Ran Set Null Parent");
-                heldBox.gameObject.AddComponent<Rigidbody2D>();
-
-                heldBox.transform.parent = null;
-                heldBox = null;
-                controller.boxHeld = false;
+                DropBox();
             }
             
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("This Ran Set Null Parent");
-                heldBox.gameObject.AddComponent<Rigidbody2D>();
-                heldBox.transform.parent = null;
-                heldBox = null;
-                controller.boxHeld = false;
+                DropBox();
             }
         }
+    }
+
+    public void DropBox()
+    {
+        heldBox.gameObject.AddComponent<Rigidbody2D>();
+
+        heldBox.transform.parent = null;
+        heldBox = null;
+        controller.boxHeld = false;
     }
 
 
