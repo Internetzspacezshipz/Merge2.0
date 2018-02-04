@@ -7,6 +7,8 @@ public class BoxPull : MonoBehaviour
     PlayerControl controller;
     GameObject heldBox = null;
     bool selectTime = false;
+    [SerializeField]
+    private Vector3 holdLocation = new Vector3(1.3f, -0.67f, 0);
 
     //            Debug.Log("This Ran");
 
@@ -17,14 +19,15 @@ public class BoxPull : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Box") && Input.GetKeyDown(KeyCode.E) && heldBox == null && selectTime == false)
+        if (other.transform.CompareTag("Box") && Input.GetKeyDown(KeyCode.E) && heldBox == null && selectTime == false && controller.boxHeld == false)
         {
             other.transform.SetParent(controller.gameObject.transform, false);
             Destroy(other.GetComponent<Rigidbody2D>());
-            other.transform.position = controller.transform.position + new Vector3(1.3f,-0.67f,0);
+            other.transform.position = controller.transform.position + holdLocation;
             Debug.Log("This Ran");
             heldBox = other.gameObject;
             StartCoroutine(WaitForUnselect());
+            controller.boxHeld = true;
         }
     }
 
@@ -39,7 +42,7 @@ public class BoxPull : MonoBehaviour
 
                 heldBox.transform.parent = null;
                 heldBox = null;
-
+                controller.boxHeld = false;
             }
             
             if (Input.GetKeyDown(KeyCode.E))
@@ -48,7 +51,7 @@ public class BoxPull : MonoBehaviour
                 heldBox.gameObject.AddComponent<Rigidbody2D>();
                 heldBox.transform.parent = null;
                 heldBox = null;
-
+                controller.boxHeld = false;
             }
         }
     }

@@ -18,6 +18,7 @@ public class PlayerControl : MonoBehaviour
 
     private IEnumerator coroutine;
 
+    internal bool boxHeld = false;
 
     private Rigidbody2D _RB;
     private SpriteRenderer _SR;
@@ -59,6 +60,8 @@ public class PlayerControl : MonoBehaviour
     {
         //StartCoroutine(coroutine);
     }
+
+
 
     //add velocity
     internal void Move(float moveSpeed, int moveDirection)
