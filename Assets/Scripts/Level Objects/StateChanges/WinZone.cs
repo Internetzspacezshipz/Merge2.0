@@ -8,10 +8,7 @@ public class WinZone : MonoBehaviour
     private string levelToLoad = "MainMenu";
     
     private Vector2 GizmoSize;
-     
-
    
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.CompareTag("Player"))
