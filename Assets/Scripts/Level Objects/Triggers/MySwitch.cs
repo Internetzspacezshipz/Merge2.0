@@ -13,6 +13,9 @@ public class MySwitch : MonoBehaviour
     [SerializeField]
     private bool triggersOnBoxes = true;
     [SerializeField]
+    private bool triggersOnPlayer = true;
+
+    [SerializeField]
     private UnityEvent TriggerEnter;
     [SerializeField]
     private UnityEvent TriggerExit;
@@ -20,6 +23,7 @@ public class MySwitch : MonoBehaviour
     [SerializeField]
     private bool playsAudio = true;
     private bool triggerTimeNotUp = false;
+
 
     private AudioSource _AS;
 
@@ -39,7 +43,7 @@ public class MySwitch : MonoBehaviour
             StartCoroutine(WaitTime());
         }
 
-        if (other.transform.CompareTag("Player") && triggered == false)
+        if (other.transform.CompareTag("Player") && triggered == false && triggersOnPlayer == true)
         {
             TriggerEnter.Invoke();
             if (cannotRetrigger == true)
