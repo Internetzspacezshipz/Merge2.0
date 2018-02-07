@@ -17,6 +17,8 @@ public class GunBox : MonoBehaviour
     private Vector2 _direction = new Vector2(1000, 0);
     [SerializeField]
     private float rateOfFire = 1.0f;
+    [SerializeField]
+    private float delayBeforeFirstShot = 0.0f;
 
     private Bullet bulletInstance;
 
@@ -27,7 +29,7 @@ public class GunBox : MonoBehaviour
         if (active == true)
         {
             fire = AutoFire();
-            StartCoroutine(fire);
+            StartCoroutine(Delay());
         }
     }
 
@@ -42,5 +44,11 @@ public class GunBox : MonoBehaviour
 
             yield return new WaitForSeconds(rateOfFire);
         }
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(delayBeforeFirstShot);
+        StartCoroutine(fire);
     }
 }

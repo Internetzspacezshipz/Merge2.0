@@ -32,6 +32,10 @@ public class PlayerControl : MonoBehaviour
 
     internal float windEffect = 0f;
 
+    private float moreThanX = 1;
+    private float moreThanY = 1;
+
+
     private bool direction;
 
     private bool audioPlaying = false;
@@ -84,26 +88,20 @@ public class PlayerControl : MonoBehaviour
         {
             direction = false;
             _SR.flipX = false;
-
         }
     }
 
     //add jumping velocity
     protected void Jump(float jumpHeight)
     {
-
         _ASJumping.Play();
         _RB.velocity = new Vector2(_RB.velocity.x, jumpHeight);
-
     }
 
 
 
     private void Update()
     {
-
-
-
         //movement inputs
         float movement = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Jump");
@@ -195,8 +193,13 @@ public class PlayerControl : MonoBehaviour
             _Animator.SetBool("IsPushing", false);
         }
 
+        float vectorx = _RB.velocity.x;
+        float vectory = _RB.velocity.y;
 
-        if (_RB.velocity == new Vector2(0, 0))
+
+
+
+        if (vectorx <= moreThanX && vectorx >= -moreThanX && vectory <= moreThanY && vectory >= -moreThanY)
         {
 
 
