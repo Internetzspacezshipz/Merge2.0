@@ -24,7 +24,6 @@ public class PlayerControl : MonoBehaviour
     private AudioSource _ASWalking;
     [SerializeField]
     private AudioSource _ASJumping;
-
     [SerializeField]
     private Animator _Animator;
 
@@ -34,6 +33,8 @@ public class PlayerControl : MonoBehaviour
 
     private float moreThanX = 1;
     private float moreThanY = 1;
+
+    internal int boxSide;
 
 
     private bool direction;
@@ -71,24 +72,27 @@ public class PlayerControl : MonoBehaviour
         _RB.velocity = new Vector2(moveSpeed * moveDirection, _RB.velocity.y);
         if (_RB.velocity.x != 0)
         {
-
             _Animator.SetBool("IsWalking", true);
         }
         else
         {
-
             _Animator.SetBool("IsWalking", false);
         }
-        if (moveDirection < 0)
+        if (_RB.velocity.x < 0)
         {
             direction = true;
             _SR.flipX = true;
         }
-        else if (moveDirection > 0)
+        else if (_RB.velocity.x > 0)
         {
             direction = false;
             _SR.flipX = false;
         }
+        else if (_RB.velocity.x == 0)
+        {
+            _SR.flipX = direction;
+        }
+        Debug.Log(moveDirection);
     }
 
     //add jumping velocity
@@ -109,10 +113,10 @@ public class PlayerControl : MonoBehaviour
         //if movement then move
         if (movement != 0)
         {
-            if (!_ASWalking.isPlaying && canJump == true)
-            {
-                _ASWalking.Play();
-            }
+            //if (!_ASWalking.isPlaying && canJump == true)
+            //{
+            //    _ASWalking.Play();
+            //}
             if (movement < 0)
             {
                 Move(moveSpeed - windEffect, -1);
@@ -186,6 +190,14 @@ public class PlayerControl : MonoBehaviour
 
         if (boxHeld == true)
         {
+            if (boxSide == -1)
+            {
+                _SR.flipX = true;
+            }
+            else if (boxSide == 1)
+            {
+                _SR.flipX = false;
+            }
             _Animator.SetBool("IsPushing", true);
         }
         else if (boxHeld == false)
@@ -197,7 +209,10 @@ public class PlayerControl : MonoBehaviour
         float vectory = _RB.velocity.y;
 
 
-
+        if (!_ASWalking.isPlaying && canJump == true && _RB.velocity.x != 0)
+        {
+            _ASWalking.Play();
+        }
 
         if (vectorx <= moreThanX && vectorx >= -moreThanX && vectory <= moreThanY && vectory >= -moreThanY)
         {
@@ -205,9 +220,6 @@ public class PlayerControl : MonoBehaviour
 
             foreach (AnimatorControllerParameter parameter in _Animator.parameters)
             {
-
-                _ASWalking.Stop();
-
                 _Animator.SetBool(parameter.name, false);
             }
 

@@ -9,6 +9,8 @@ public class BoxPull : MonoBehaviour
     bool selectTime = false;
     [SerializeField]
     private Vector3 holdLocation = new Vector3(1.3f, -0.67f, 0);
+    [SerializeField]
+    private int side;
 
     //            Debug.Log("This Ran");
 
@@ -27,6 +29,7 @@ public class BoxPull : MonoBehaviour
             heldBox = other.gameObject;
             StartCoroutine(WaitForUnselect());
             controller.boxHeld = true;
+            controller.boxSide = side;
         }
     }
 
