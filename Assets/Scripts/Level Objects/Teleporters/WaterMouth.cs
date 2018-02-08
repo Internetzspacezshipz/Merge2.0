@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class WaterMouth : MonoBehaviour
 {
-    private Animator _Animator;
+	private Animator _Animator;
 
 
-    private void Awake()
-    {
-        _Animator = GetComponent<Animator>();
-    }
+	private void Awake()
+	{
+		_Animator = GetComponent<Animator>();
+	}
 
-    public void PlayAnimation()
-    {
-        _Animator.SetBool("Animate", true);
-    }
+	public void PlayAnimation()
+	{
+		_Animator.SetBool("Animate", true);
+	}
 }

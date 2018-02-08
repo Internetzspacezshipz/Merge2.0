@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386641e0cc31a5840885751bc03c2dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level_3
+  levelToLoad: MainMenu
   portalAnimator: {fileID: 95567238331861674}
   baseAnimator: {fileID: 95032360010257596}
 --- !u!212 &212595147663843570

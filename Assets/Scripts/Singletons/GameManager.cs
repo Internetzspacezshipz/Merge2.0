@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private Canvas pauseUIObject;
     public int currentCheckpoint = 0;
 
-    //public int winzoneCount = 0;
+    public int winzoneCount = 0;
 
     private Soul soul;
     private Body body;
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1;
 
-        //winzoneCount = 0;
+        winzoneCount = 0;
 
         sceneNumber = scene.buildIndex;
     }
@@ -93,16 +93,17 @@ public class GameManager : MonoBehaviour
 
 
     public void OnWin(PlayerControl playerController)
-    {
+	{		
+		
         playerController._SR.enabled = false;
-
-        soul.isDead = true;
-        body.isDead = true;
+		playerController.isDead = true;
     }
 
 
     IEnumerator DeathTimeline()
     {
+
+
         soul.isDead = true;
         body.isDead = true;
 

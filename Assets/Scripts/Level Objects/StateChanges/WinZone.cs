@@ -13,21 +13,35 @@ public class WinZone : MonoBehaviour
     private Animator baseAnimator;
     private PlayerControl playerController;
 
+	private bool alreadyTriggered = false;
+
     
     private Vector2 GizmoSize;
    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player"))
-        {
-            GameManager.instance.OnWin(playerController);
-            /*GameManager.instance.winzoneCount ++;
 
-            if (GameManager.instance.winzoneCount > 1)
-            {
-                StartCoroutine(winTimeline());
-            }*/
-        }
+			if (other.transform.CompareTag ("Player")) 
+			{		
+			
+			if (alreadyTriggered == false) 
+				{
+				
+				playerController = other.GetComponent<PlayerControl> ();
+				GameManager.instance.OnWin (playerController);
+				++GameManager.instance.winzoneCount;
+
+				portalAnimator.SetBool ("Load", true);
+				baseAnimator.SetBool ("Load", true);
+				alreadyTriggered = true;
+
+
+				if (GameManager.instance.winzoneCount == 2) 
+				{
+					StartCoroutine (winTimeline ());
+				}
+			}
+		}
     }
 
 
@@ -46,7 +60,7 @@ public class WinZone : MonoBehaviour
         portalAnimator.SetBool("Load", true);
         baseAnimator.SetBool("Load", true);
 
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(5);
         GameManager.instance.LoadLevel(levelToLoad);
     }
 }
