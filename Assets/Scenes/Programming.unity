@@ -305,6 +305,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c62f5799cad6d9e429c2b98686ef5106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &471153804 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1796178312845102, guid: b8a2afc3b65e0b740b7c717897c9828b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2058352544}
+--- !u!114 &471153805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 471153804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fe717cfb0b4df4bbb99a906203396b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &490870634
 Prefab:
   m_ObjectHideFlags: 0
@@ -690,20 +706,9 @@ MonoBehaviour:
   TriggerEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 977345821}
-        m_MethodName: AddOne
+      - m_Target: {fileID: 471153805}
+        m_MethodName: PlayAnimation
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1449,22 +1454,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193818075241276, guid: 1999265d4f6a08c469d6ff04967c57fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4193818075241276, guid: 1999265d4f6a08c469d6ff04967c57fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -319.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4921241594261712, guid: 1999265d4f6a08c469d6ff04967c57fd, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -104.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4921241594261712, guid: 1999265d4f6a08c469d6ff04967c57fd, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -333.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1999265d4f6a08c469d6ff04967c57fd, type: 2}
@@ -4386,11 +4375,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4524709863426962, guid: b8a2afc3b65e0b740b7c717897c9828b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -26.86
+      value: -22.09
       objectReference: {fileID: 0}
     - target: {fileID: 4524709863426962, guid: b8a2afc3b65e0b740b7c717897c9828b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 66.17
+      value: 50.57
       objectReference: {fileID: 0}
     - target: {fileID: 4524709863426962, guid: b8a2afc3b65e0b740b7c717897c9828b, type: 2}
       propertyPath: m_LocalPosition.z

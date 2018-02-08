@@ -25,6 +25,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private AudioSource _ASJumping;
     [SerializeField]
+    private AudioSource _ASDied;
+
+    [SerializeField]
     private Animator _Animator;
 
     internal bool canJump = false;
@@ -104,11 +107,11 @@ public class PlayerControl : MonoBehaviour
 
     public void Die()
     {
+        _ASDied.Play();
         foreach (AnimatorControllerParameter parameter in _Animator.parameters)
         {
             _Animator.SetBool(parameter.name, false);
         }
-
         _Animator.SetBool("IsDead", true);
     }
 
