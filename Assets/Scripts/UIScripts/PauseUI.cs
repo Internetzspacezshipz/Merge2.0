@@ -9,11 +9,16 @@ public class PauseUI : MonoBehaviour
 
     [SerializeField]
     private Button mainMenuButton;
+	[SerializeField]
+	private Button restartButton;
 
     void Start()
     {
         Button checkBtn = mainMenuButton.GetComponent<Button>();
-        checkBtn.onClick.AddListener(MainMenu);
+        checkBtn.onClick.AddListener (MainMenu);
+		Button restartBtn = restartButton.GetComponent<Button> ();
+		restartBtn.onClick.AddListener (Restart);
+
     }
 
 
@@ -22,6 +27,11 @@ public class PauseUI : MonoBehaviour
         GameManager.instance.LoadLevel("MainMenu");
     }
 
+
+	private void Restart()
+	{
+		GameManager.instance.RestartGame ();
+	}
 
     private void Awake()
     {

@@ -41,8 +41,6 @@ public class CheckpointSystem : MonoBehaviour
 
     public void SpawnAtCheckpoint()
     {
-
-
         Debug.Log(GameManager.instance.currentCheckpoint);
 
         Body.transform.position = checkpointsBody[GameManager.instance.currentCheckpoint].transform.position;
