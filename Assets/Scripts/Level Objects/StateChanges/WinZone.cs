@@ -20,8 +20,13 @@ public class WinZone : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            playerController = other.GetComponent<PlayerControl>();
-            StartCoroutine(winTimeline());
+            GameManager.instance.OnWin(playerController);
+            /*GameManager.instance.winzoneCount ++;
+
+            if (GameManager.instance.winzoneCount > 1)
+            {
+                StartCoroutine(winTimeline());
+            }*/
         }
     }
 
@@ -37,12 +42,11 @@ public class WinZone : MonoBehaviour
 
     IEnumerator winTimeline()
     {
-        GameManager.instance.OnWin(playerController);
 
         portalAnimator.SetBool("Load", true);
         baseAnimator.SetBool("Load", true);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(7);
         GameManager.instance.LoadLevel(levelToLoad);
     }
 }

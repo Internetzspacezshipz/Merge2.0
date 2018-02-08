@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private Canvas pauseUIObject;
     public int currentCheckpoint = 0;
 
+    //public int winzoneCount = 0;
+
     private Soul soul;
     private Body body;
 
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
         body.isDead = false;
 
         Time.timeScale = 1;
+
+        //winzoneCount = 0;
 
         sceneNumber = scene.buildIndex;
     }
