@@ -88,17 +88,12 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void OnWin()
+    public void OnWin(PlayerControl playerController)
     {
-        soul._SR.enabled = false;
-        body._SR.enabled = false;
+        playerController._SR.enabled = false;
 
         soul.isDead = true;
         body.isDead = true;
-
-
-
-
     }
 
 

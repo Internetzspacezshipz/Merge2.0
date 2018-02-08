@@ -11,6 +11,7 @@ public class WinZone : MonoBehaviour
     private Animator portalAnimator;
     [SerializeField]
     private Animator baseAnimator;
+    private PlayerControl playerController;
 
     
     private Vector2 GizmoSize;
@@ -19,6 +20,7 @@ public class WinZone : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
+            playerController = other.GetComponent<PlayerControl>();
             StartCoroutine(winTimeline());
         }
     }
@@ -35,7 +37,7 @@ public class WinZone : MonoBehaviour
 
     IEnumerator winTimeline()
     {
-        GameManager.instance.OnWin();
+        GameManager.instance.OnWin(playerController);
 
         portalAnimator.SetBool("Load", true);
         baseAnimator.SetBool("Load", true);
