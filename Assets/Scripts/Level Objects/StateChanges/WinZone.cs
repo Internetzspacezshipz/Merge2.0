@@ -20,13 +20,14 @@ public class WinZone : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-			if (other.transform.CompareTag ("Player")) 
+		
+			if (other.transform.CompareTag ("Player"))
 			{		
 			
-			if (alreadyTriggered == false) 
+				if (alreadyTriggered == false)
 				{
 				
+				GameManager.instance.detachCamera = true;
 				playerController = other.GetComponent<PlayerControl> ();
 				GameManager.instance.OnWin (playerController);
 				++GameManager.instance.winzoneCount;
@@ -36,7 +37,7 @@ public class WinZone : MonoBehaviour
 				alreadyTriggered = true;
 
 
-				if (GameManager.instance.winzoneCount == 2) 
+				if (GameManager.instance.winzoneCount == 2)
 				{
 					StartCoroutine (winTimeline ());
 				}

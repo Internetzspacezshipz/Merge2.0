@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private Soul soul;
     private Body body;
 
+	public bool detachCamera = false;
 
     private void Awake()
     {
@@ -94,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     public void OnWin(PlayerControl playerController)
 	{		
-		
+		playerController.OnWin ();
         playerController._SR.enabled = false;
 		playerController.isDead = true;
     }

@@ -216,6 +216,12 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+	public void OnWin()
+	{
+		Camera camera = GetComponentInChildren<Camera> ();
+		camera.transform.parent = null;
+	}
+
 
 
     private void OnTriggerEnter2D(Collider2D other)
