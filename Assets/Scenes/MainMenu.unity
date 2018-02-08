@@ -379,6 +379,16 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114236878569028026, guid: 137580381ae6530488d88bff139a0341,
+        type: 2}
+      propertyPath: NextLevel
+      value: LevelDesign_Pedro
+      objectReference: {fileID: 0}
+    - target: {fileID: 114236878569028026, guid: 137580381ae6530488d88bff139a0341,
+        type: 2}
+      propertyPath: playButtonLevel
+      value: LevelDesign_Pedro
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 137580381ae6530488d88bff139a0341, type: 2}
   m_IsPrefabParent: 0
