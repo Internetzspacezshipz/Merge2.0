@@ -105,13 +105,6 @@ public class PlayerControl : MonoBehaviour
         _RB.velocity = new Vector2(_RB.velocity.x, jumpHeight);
     }
 
-	public void DetachCamera()
-	{
-		Camera camera = GetComponentInChildren<Camera> ();
-		camera.transform.parent = null;
-	}
-
-
     public void Die()
     {
         _ASDied.Play();
