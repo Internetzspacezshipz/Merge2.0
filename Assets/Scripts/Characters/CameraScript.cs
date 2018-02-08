@@ -18,17 +18,14 @@ public class CameraScript : MonoBehaviour
 
     private void Update()
     {
-		if (GameManager.instance.camAttach == true) 
-		{
-			cam0.transform.position = (character0.transform.position + character1.transform.position) / 2;
-			cam0.transform.position = new Vector3 (cam0.transform.position.x, character0.transform.position.y, -10);
-			cam1.transform.position = (character0.transform.position + character1.transform.position) / 2;
-			cam1.transform.position = new Vector3 (cam1.transform.position.x, character1.transform.position.y, -10);
+        cam0.transform.position = (character0.transform.position + character1.transform.position) / 2;
+        cam0.transform.position = new Vector3(cam0.transform.position.x, character0.transform.position.y, -10);
+        cam1.transform.position = (character0.transform.position + character1.transform.position) / 2;
+        cam1.transform.position = new Vector3(cam1.transform.position.x, character1.transform.position.y, -10);
 
-			if (character0.transform.position.x - character1.transform.position.x >= maxDistance || character0.transform.position.x - character1.transform.position.x <= -maxDistance) 
-			{
-				GameManager.instance.RestartGame ();
-			}
-		}
+        if (character0.transform.position.x - character1.transform.position.x >= maxDistance || character0.transform.position.x - character1.transform.position.x <= -maxDistance)
+        {
+            GameManager.instance.RestartGame();
+        }
     }
 }
