@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level Design_2.unity
     guid: c9d35b9d6e1ff1540a31eec309e52a4a
+  - enabled: 1
+    path: Assets/Scenes/LevelDesign_Pedro.unity
+    guid: 2c28705e947ba4e45abaf5a55e6bec3f
