@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4524709863426962}
   - component: {fileID: 212348071010675358}
   - component: {fileID: 95297927808468916}
+  - component: {fileID: 114688692483508350}
   m_Layer: 0
   m_Name: W_MouthTeleport
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796178312845102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.09, y: 50.57, z: 0}
+  m_LocalPosition: {x: -0.8667229, y: 138.21114, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,6 +59,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114688692483508350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1796178312845102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c991b7e8624db4189de4bfcf824609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212348071010675358
 SpriteRenderer:
   m_ObjectHideFlags: 1
