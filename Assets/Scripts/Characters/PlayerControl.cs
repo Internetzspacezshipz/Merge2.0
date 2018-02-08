@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
     internal bool boxHeld = false;
 
     private Rigidbody2D _RB;
-    private SpriteRenderer _SR;
+    internal SpriteRenderer _SR;
     [SerializeField]
     private AudioSource _ASWalking;
     [SerializeField]
@@ -44,6 +44,7 @@ public class PlayerControl : MonoBehaviour
 
     public bool standingOnBox = false;
 
+    internal bool isDead = false;
 
     #endregion
 
@@ -92,7 +93,6 @@ public class PlayerControl : MonoBehaviour
         {
             _SR.flipX = direction;
         }
-        Debug.Log(moveDirection);
     }
 
     //add jumping velocity
@@ -102,127 +102,114 @@ public class PlayerControl : MonoBehaviour
         _RB.velocity = new Vector2(_RB.velocity.x, jumpHeight);
     }
 
+    public void Die()
+    {
+        foreach (AnimatorControllerParameter parameter in _Animator.parameters)
+        {
+            _Animator.SetBool(parameter.name, false);
+        }
 
+        _Animator.SetBool("IsDead", true);
+    }
 
     private void Update()
     {
-        //movement inputs
-        float movement = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Jump");
-
-        //if movement then move
-        if (movement != 0)
+        if (isDead == false)
         {
-            //if (!_ASWalking.isPlaying && canJump == true)
-            //{
-            //    _ASWalking.Play();
-            //}
-            if (movement < 0)
+            //movement inputs
+            float movement = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Jump");
+
+            //if movement then move
+            if (movement != 0)
             {
-                Move(moveSpeed - windEffect, -1);
+                //if (!_ASWalking.isPlaying && canJump == true)
+                //{
+                //    _ASWalking.Play();
+                //}
+                if (movement < 0)
+                {
+                    Move(moveSpeed - windEffect, -1);
+                }
+                if (movement > 0)
+                {
+                    Move(moveSpeed + windEffect, 1);
+                }
             }
-            if (movement > 0)
+            //Input.GetKeyDown
+
+            else if (movement == 0)
             {
-                Move(moveSpeed + windEffect, 1);
+                _ASWalking.Stop();
+
+                _SR.flipX = direction;
+
+                Move(0 + windEffect, 1);
             }
-        }
-        //Input.GetKeyDown
 
-        else if (movement == 0)
-        {
-            _ASWalking.Stop();
+            //jumping
+            if (vertical != 0)
+            {
+                if (canJump == true)
+                {
+                    Jump(jumpHeight);
+                }
+            }
 
-            _SR.flipX = direction;
+            //animator here too pls
+            if (_RB.velocity.y > 0 && canJump == false)
+            {
+                _Animator.SetBool("IsGoingUp", true);
 
-            Move(0 + windEffect, 1);
-        }
+            }
 
-        //jumping
-        if (vertical != 0)
-        {
+            //animator here pls
+            if (_RB.velocity.y < 0 && canJump == false)
+            {
+                _Animator.SetBool("IsFalling", true);
+
+            }
+
             if (canJump == true)
             {
-                Jump(jumpHeight);
+                _Animator.SetBool("IsFalling", false);
+                _Animator.SetBool("IsGoingUp", false);
             }
-        }
 
-        //animator here too pls
-        if (_RB.velocity.y > 0 && canJump == false)
-        {
-            _Animator.SetBool("IsGoingUp", true);
-
-        }
-
-        //animator here pls
-        if (_RB.velocity.y < 0 && canJump == false)
-        {
-            _Animator.SetBool("IsFalling", true);
-
-        }
-
-        if (canJump == true)
-        {
-            _Animator.SetBool("IsFalling", false);
-            _Animator.SetBool("IsGoingUp", false);
-        }
-
-        //Animators here
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        if (boxHeld == true)
-        {
-            if (boxSide == -1)
+            //Animators here
+            if (boxHeld == true)
             {
-                _SR.flipX = true;
+                if (boxSide == -1)
+                {
+                    _SR.flipX = true;
+                }
+                else if (boxSide == 1)
+                {
+                    _SR.flipX = false;
+                }
+                _Animator.SetBool("IsPushing", true);
             }
-            else if (boxSide == 1)
+            else if (boxHeld == false)
             {
-                _SR.flipX = false;
+                _Animator.SetBool("IsPushing", false);
             }
-            _Animator.SetBool("IsPushing", true);
-        }
-        else if (boxHeld == false)
-        {
-            _Animator.SetBool("IsPushing", false);
-        }
 
-        float vectorx = _RB.velocity.x;
-        float vectory = _RB.velocity.y;
+            float vectorx = _RB.velocity.x;
+            float vectory = _RB.velocity.y;
 
 
-        if (!_ASWalking.isPlaying && canJump == true && _RB.velocity.x != 0)
-        {
-            _ASWalking.Play();
-        }
-
-        if (vectorx <= moreThanX && vectorx >= -moreThanX && vectory <= moreThanY && vectory >= -moreThanY)
-        {
-
-
-            foreach (AnimatorControllerParameter parameter in _Animator.parameters)
+            if (!_ASWalking.isPlaying && canJump == true && _RB.velocity.x != 0)
             {
-                _Animator.SetBool(parameter.name, false);
+                _ASWalking.Play();
             }
 
+            if (vectorx <= moreThanX && vectorx >= -moreThanX && vectory <= moreThanY && vectory >= -moreThanY)
+            {
+                foreach (AnimatorControllerParameter parameter in _Animator.parameters)
+                {
+                    _Animator.SetBool(parameter.name, false);
+                }
+            }
         }
     }
 

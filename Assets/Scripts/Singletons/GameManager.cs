@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,10 @@ public class GameManager : MonoBehaviour
     private Canvas pauseUI;
     private Canvas pauseUIObject;
     public int currentCheckpoint = 0;
+
+    private Soul soul;
+    private Body body;
+
 
     private void Awake()
     {
@@ -38,6 +44,12 @@ public class GameManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
+        soul = FindObjectOfType<Soul>();
+        body = FindObjectOfType<Body>();
+
+        soul.isDead = false;
+        body.isDead = false;
+
         Time.timeScale = 1;
 
         sceneNumber = scene.buildIndex;
@@ -61,6 +73,50 @@ public class GameManager : MonoBehaviour
 
     public void FailUI()
     {
+        StartCoroutine(DeathTimeline());
+    }
+
+    public void LoadCheckpoint()
+    {
+        RestartGame();
+        CheckpointSystem.instance.SpawnAtCheckpoint();
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+
+    public void OnWin()
+    {
+        soul._SR.enabled = false;
+        body._SR.enabled = false;
+
+        soul.isDead = true;
+        body.isDead = true;
+
+
+
+
+    }
+
+
+    IEnumerator DeathTimeline()
+    {
+        soul.isDead = true;
+        body.isDead = true;
+
+        yield return new WaitForSeconds(0.1f);
+
+
+        soul.Die();
+        body.Die();
+
+
+        yield return new WaitForSeconds(2);
+
+
         Instantiate(failUI);
         canvas = FindObjectOfType<Canvas>();
 
@@ -74,15 +130,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadCheckpoint()
-    {
-        RestartGame();
-        CheckpointSystem.instance.SpawnAtCheckpoint();
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
 
 }
