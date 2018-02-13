@@ -37,7 +37,6 @@ public class WinZone : MonoBehaviour
 				alreadyTriggered = true;
 
 
-
 				if (GameManager.instance.winzoneCount == 2)
 				{
 					StartCoroutine (winTimeline ());
@@ -58,6 +57,9 @@ public class WinZone : MonoBehaviour
 
     IEnumerator winTimeline()
     {
+
+        portalAnimator.SetBool("Load", true);
+        baseAnimator.SetBool("Load", true);
 
         yield return new WaitForSeconds(5);
         GameManager.instance.LoadLevel(levelToLoad);
