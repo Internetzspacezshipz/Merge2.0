@@ -15,15 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FailScreen.unity
     guid: 8e609131f708d7d459edde858539fba3
   - enabled: 1
-    path: Assets/Scenes/Programming.unity
-    guid: e6c988ae82c48d940b411fbf6de60435
-  - enabled: 1
-    path: Assets/Scenes/Level Design.unity
-    guid: 9fe3374fff7757449b7281d716d332ba
-  - enabled: 1
-    path: Assets/Scenes/Level Design_2.unity
-    guid: c9d35b9d6e1ff1540a31eec309e52a4a
-  - enabled: 1
     path: Assets/Scenes/LevelDesign_Pedro.unity
     guid: 2c28705e947ba4e45abaf5a55e6bec3f
   - enabled: 1
@@ -32,3 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_4.unity
     guid: 77fce21691bce2642b1f748cfecc4642
+  - enabled: 1
+    path: Assets/Scenes/Level Design.unity
+    guid: 9fe3374fff7757449b7281d716d332ba
+  - enabled: 1
+    path: Assets/Scenes/Level Design_2.unity
+    guid: c9d35b9d6e1ff1540a31eec309e52a4a
+  - enabled: 0
+    path: Assets/Scenes/Programming.unity
+    guid: e6c988ae82c48d940b411fbf6de60435
