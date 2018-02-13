@@ -1261,7 +1261,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 2.4233522e-36, g: 0, b: 21.407335, a: 1e-45}
   - m_RefCount: 1
-    m_Data: {r: 0.7477088, g: 0.42243743, b: 0.5133266, a: 1}
+    m_Data: {r: 0.79049444, g: 0.4575014, b: 0.48820904, a: 1}
   - m_RefCount: 1
     m_Data: {r: 0, g: 0.5661765, b: 0.05076064, a: 1}
   m_AnimationFrameRate: 1
