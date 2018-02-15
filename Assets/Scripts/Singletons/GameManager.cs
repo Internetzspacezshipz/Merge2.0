@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     public int winzoneCount = 0;
 
-    private Soul soul;
-    private Body body;
+    public Soul soul;
+    public Body body;
 
 	public bool detachCamera = false;
 

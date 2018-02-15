@@ -12,7 +12,7 @@ public class RailPlatform : MonoBehaviour
     public bool active = true;
 
     [SerializeField]
-    Vector2[] locations = new Vector2[numberOfLocations];
+    Vector3[] locations = new Vector3[numberOfLocations];
 
     [SerializeField]
     private float duration = 4.0f;
@@ -20,9 +20,6 @@ public class RailPlatform : MonoBehaviour
     [SerializeField]
     Ease easeType;
 
-    private Tweener tween;
-
-    private IEnumerator coroutine;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,12 +37,10 @@ public class RailPlatform : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
-        coroutine = AutoLoop();
-        StartCoroutine(coroutine);
+        StartCoroutine(AutoLoop());
     }
-
 
     public void SetActive()
     {
@@ -61,12 +56,11 @@ public class RailPlatform : MonoBehaviour
     {
         while (active == true)
         {
-            foreach (Vector2 location in locations)
+            foreach (Vector3 location in locations)
             {
                 transform.DOMove(location, duration).SetEase(easeType);
                 yield return new WaitForSeconds(duration);
             }
         }
     }
-
 }
