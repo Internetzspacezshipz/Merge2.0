@@ -60,6 +60,7 @@ public class PlayerControl : MonoBehaviour
         _Animator = GetComponent<Animator>();
         _SR = GetComponent<SpriteRenderer>();
         //_AS = GetComponent<AudioSource>();
+        GameManager.instance.enabled = true;
     }
 
 

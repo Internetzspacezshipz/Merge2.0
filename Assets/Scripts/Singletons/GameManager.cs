@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
+        GameManager.instance.detachCamera = false;
         soul = FindObjectOfType<Soul>();
         body = FindObjectOfType<Body>();
 
@@ -74,6 +75,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         
         SceneManager.LoadScene(levelName, LoadSceneMode.Single);
+
+        GameManager.instance.enabled = false;
     }
 
     public void FailUI()
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         RestartGame();
         CheckpointSystem.instance.SpawnAtCheckpoint();
+
     }
 
     public void Quit()
@@ -114,22 +118,14 @@ public class GameManager : MonoBehaviour
         soul.Die();
         body.Die();
 
-
-        yield return new WaitForSeconds(2);
-
-
-        Instantiate(failUI);
-        canvas = FindObjectOfType<Canvas>();
-
-        Time.timeScale = 0;
-        canvas.enabled = true;
+        yield return new WaitForSeconds(1.5f);
 
         AudioSource[] audioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
         foreach (AudioSource audioS in audioSources)
         {
             audioS.Stop();
         }
+
+        RestartGame();
     }
-
-
 }

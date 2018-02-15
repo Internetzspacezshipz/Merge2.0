@@ -61,7 +61,7 @@ public class WinZone : MonoBehaviour
         portalAnimator.SetBool("Load", true);
         baseAnimator.SetBool("Load", true);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         GameManager.instance.LoadLevel(levelToLoad);
     }
 }
