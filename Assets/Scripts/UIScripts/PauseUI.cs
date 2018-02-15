@@ -11,6 +11,8 @@ public class PauseUI : MonoBehaviour
     private Button mainMenuButton;
 	[SerializeField]
 	private Button restartButton;
+    [SerializeField]
+    private AudioSource _AS;
 
     void Start()
     {
@@ -46,6 +48,7 @@ public class PauseUI : MonoBehaviour
         {
             Time.timeScale = 0;
             canvas.enabled = true;
+            _AS.mute = false;
         }
     }
 
@@ -55,5 +58,12 @@ public class PauseUI : MonoBehaviour
     {
         Time.timeScale = 1;
         canvas.enabled = false;
+        _AS.mute = true;
+    }
+
+    private IEnumerator UnPauseWait()
+    {
+        yield return new WaitForSeconds(0.3f);
+        _AS.mute = true;
     }
 }
