@@ -15,6 +15,7 @@ public class WinZone : MonoBehaviour
 
 	private bool alreadyTriggered = false;
 
+    public float portalDelay;
     
     private Vector2 GizmoSize;
    
@@ -32,9 +33,7 @@ public class WinZone : MonoBehaviour
 				GameManager.instance.OnWin (playerController);
 				++GameManager.instance.winzoneCount;
 
-				portalAnimator.SetBool ("Load", true);
-				baseAnimator.SetBool ("Load", true);
-				alreadyTriggered = true;
+                EnableBase();
 
 
 				if (GameManager.instance.winzoneCount == 2)
@@ -45,6 +44,17 @@ public class WinZone : MonoBehaviour
 		}
     }
 
+    private void EnableBase()
+    {
+        baseAnimator.SetBool("Load", true);
+        alreadyTriggered = true;
+        Invoke("EnablePortal", portalDelay);
+    }
+
+    private void EnablePortal()
+    {
+        portalAnimator.SetBool("Load", true);
+    }
 
 
     private void OnDrawGizmos()
