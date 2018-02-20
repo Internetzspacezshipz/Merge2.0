@@ -150415,16 +150415,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 114514405109542964, guid: 29277155cf604c84e8cce8c79b037773,
-        type: 2}
-      propertyPath: levelToLoad
-      value: Level_4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114514405109542964, guid: 29277155cf604c84e8cce8c79b037773,
-        type: 2}
-      propertyPath: portalDelay
-      value: 4.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29277155cf604c84e8cce8c79b037773, type: 2}
   m_IsPrefabParent: 0
